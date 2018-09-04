@@ -1,0 +1,11 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.btn-outline-primary:hover {
+    background-color: #d6dbdf ;
+    border-color: #b6bae7;
+}
+
+.btn-outline-primary {
+    color: black;
+    border-color: #b2babb;
+}

@@ -1,0 +1,9 @@
+<xml xmlns="http://www.w3.org/1999/xhtml" id="toolbox" style="display: none;">
+  <block type="mover">
+    <field name="rotaciones">5</field>
+  </block>
+  <block type="girar">
+    <field name="grados">90</field>
+    <field name="direccion">izq</field>
+  </block>
+</xml>

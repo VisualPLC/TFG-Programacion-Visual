@@ -1,0 +1,132 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blockly</title>
+
+    <!--***************** FICHEROS JAVASCRIPT ********************-->
+    <script src="js/blockly_compressed.js"></script>
+    <script src="js/blocks_compressed.js"></script>
+    <script src="js/javascript_compressed.js"></script>
+    <script src="msg/js/es.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="js/config_robot.js"></script>
+    <script type="text/javascript" src="js/def.js"></script>
+    <script type="text/javascript" src="js/gen.js"></script>
+    <script type="text/javascript" src="js/select.js"></script>
+    
+    <!--*********************************************************/-->
+
+    <!--*********************** FICHEROS CSS ********************/-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--*********************************************************/-->    
+
+  </head>
+  <body onload="config_robot()">
+
+    <br>
+    <div class="header" style="text-align: center;">
+      <h1>Programación Visual con Blockly</h1>
+    </div>
+    <br>
+
+    <div class="main">
+
+      <div id="borde" >
+
+        <div id="blocklyDiv" style="height: 600px; width: 900px; margin: 0 auto;"></div>
+
+        <xml id="toolbox" style="display: none;">
+
+          <category name="Movimiento" custom="RobotBlocks" colour="#2D97B5"></category> 
+          <category name="Sensores" custom="SensorBlocks" colour="#D1941E"></category>
+          <category name="Lógica Sensores" custom="LogicSensorBlocks" colour="#db6f2a"></category>
+
+          <sep></sep>
+
+          <category name="Lógica" colour="#4B3BB3">
+            <block type="controls_if"></block>
+            <block type="logic_compare"></block>
+            <block type="logic_operation"></block>
+            <block type="logic_boolean"></block>
+            <block type="math_number"></block>
+            <block type="num_random">
+              <field name="min">1</field>
+              <field name="max">10</field>
+            </block>
+            <block type="logic_null"></block>
+            <block type="math_arithmetic"></block>
+          </category>
+
+          <category name="Bucles" colour="#2F9917">
+            <block type="controls_repeat_ext"></block>
+            <block type="controls_whileUntil"></block>
+            <block type="controls_for">
+          </category>
+
+          <category name="Texto" colour="#0EA183">
+            <block type="text"></block>
+            <block type="text_print"></block>
+          </category>
+
+          <category name="Color" colour="#8E3434">
+            <block type="colour_picker">
+              <field name="COLOUR">#ff0000</field>
+            </block>
+            <block type="colour_random"></block>
+          </category>
+
+          <sep></sep>
+
+          <category name="Variable" custom="VARIABLE" colour="#803672"></category> 
+          
+        </xml>
+        
+      </div>
+
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <button onclick="showCode()" type="button" class="btn btn-outline-primary">Mostrar Código</button>
+      <button onclick="runCode()" type="button" class="btn btn-outline-primary">Descargar Código</button>
+      <button type="button" id="Crear" class="btn btn-outline-primary">Ayuda</button>
+    </div>
+      
+    </div>
+
+    <xml id="config_robot" src="config_robot.xml"></xml>
+
+    <div id="ModalCrear" class="modal fade" role="dialog" style="overflow-y: scroll;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" data-dismiss="modal" class="btn"><span class="close">&times;</span></button>
+          <div class="modal-header">
+            <h4 class="modal-tittle">Ayuda</h4>
+          </div>
+            <div class="modal-body">
+              <p>Ejemplo 1: Uso de la aplicación</p>
+              <img src="images/ej_1.png" alt="Ejemplo 1: Uso de la app">
+              <p>Ejemplo 2: Uso de la aplicación</p>
+              <img src="images/ej_2.png" alt="Ejemplo 1: Uso de la app">
+              <p>Ejemplo 3: Uso de los sensores Láser, Ultrasonido y Láser 2D</p>
+              <img src="images/ej_sensor1.png" alt="Ejemplo 3: Sensores que devuelven una distancia">
+              <p>Ejemplo 4: Uso de los sensores de Contacto e Infrarrojo</p>
+              <img src="images/ej_sensor2.png" alt="Ejemplo 4: Sensores que devuelven un booleano">
+            </div>
+        </div>
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/modal.js"></script>
+    
+  </body>
+</html>
